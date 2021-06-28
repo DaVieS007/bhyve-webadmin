@@ -1,0 +1,37 @@
+#!/bin/sh
+#
+# $FreeBSD: 2021.06.15
+#
+
+# PROVIDE: bvcp-backend
+# REQUIRE: NETWORKING SERVERS
+# BEFORE: DAEMON
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable trackit-client:
+#
+# bvcp_enable="YES"
+# 
+#
+
+. /etc/rc.subr
+
+name=bvcp
+rcvar=bvcp_enable
+
+# read settings, set default values
+load_rc_config "$name"
+
+: ${bvcp_enable:=NO}
+
+command=/var/lib/nPulse/BVCP/Backend/vmm
+required_dirs=/var/lib/nPulse/BVCP/Backend
+required_files=/var/lib/nPulse/BVCP/Backend/vmm
+start_cmd="$command --daemon /var/lib/nPulse/BVCP/Backend/ /var/run/bvcp-backend.pid"
+
+start_precmd=
+reload_cmd=
+pidfile=/var/run/bvcp-backend.pid
+
+run_rc_command "$1"
