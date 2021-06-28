@@ -1,0 +1,2 @@
+2021.06.28: Fixed 'sysinfo' hung up when one of the nodes is unavail.
+2021.06.28: First release as release candidate
