@@ -1,3 +1,6 @@
+2021.06.30: Daily Release, tag: v1.0-rc4
+2021.06.30: Fix: [Credit: VincentV@HUP]: The installer script may fails due missing /usr/local/etc/rc.d on fresh installs
+2021.06.29: Hotfix Release: tag: v1.0-rc3
 2021.06.29: Fixed prefix: allowing '_' char
 2021.06.29: Daily Release, tag: v1.0-rc2
 2021.06.28: Fixed 'sysinfo' hung up when one of the nodes is unavail.

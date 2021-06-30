@@ -6,6 +6,7 @@ echo ""
 echo "Press [CTRL] + [C] to Abort !"
 sleep 5
 
+mkdir -p /usr/local/etc/rc.d
 mkdir -p /var/lib/nPulse/BVCP
 cp -R ./API/ /var/lib/nPulse/BVCP/API/
 cp -R ./Backend/ /var/lib/nPulse/BVCP/Backend/
