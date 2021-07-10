@@ -1,3 +1,21 @@
+v.1.0-rc5
+2021.07.10: Security Fix: SQLite AUTO_INCREMENT behaviour allows newly created user to re-assign deleted user's IDs.
+2021.07.10: Fix: Password stored wrong when new user created
+2021.07.10: Enable user to modify: "Wait for Console", "Display", "RTC Clock", "Architecture", "Guest OS".
+2021.07.10: Added version information on dashboard
+2021.07.10: Newly created VMs are minimally preconfigured
+2021.07.09: Added `RTC is UTC time` switch
+2021.07.09: Fix: Notes and Journal inherited from deleted VMs when recreated with same prefix
+2021.07.08: Removed IP Address at login splash, (security reason for using behind proxy)
+2021.07.07: Added node prefetcher to avoid connection drops on huge latency
+2021.07.06: Dashboard runs smoothly, lot of optimizations
+2021.07.05: Fix: Config overwrite issues
+2021.07.05: Upgraded framework, showing less informations on startup
+2021.07.04: Fix: VM disk images wont deleted when not properly detached even if the VM is OFF and is on detaching state
+2021.07.04: Fix: Networking issues that interfaces wont pull-up
+2021.07.04: Fix: Modified startup scripts and binaries to avoid conditional-race between helper and backend
+
+v1.0-rc4
 2021.06.30: Daily Release, tag: v1.0-rc4
 2021.06.30: Fix: [Credit: VincentV@HUP]: The installer script may fails due missing /usr/local/etc/rc.d on fresh installs
 2021.06.29: Hotfix Release: tag: v1.0-rc3

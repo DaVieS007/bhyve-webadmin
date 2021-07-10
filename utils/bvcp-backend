@@ -28,7 +28,7 @@ load_rc_config "$name"
 command=/var/lib/nPulse/BVCP/Backend/vmm
 required_dirs=/var/lib/nPulse/BVCP/Backend
 required_files=/var/lib/nPulse/BVCP/Backend/vmm
-start_cmd="$command --daemon /var/lib/nPulse/BVCP/Backend/ /var/run/bvcp-backend.pid"
+start_cmd="$command --daemon /var/lib/nPulse/BVCP/Backend/ /var/run/bvcp-backend.pid backend"
 
 start_precmd=
 reload_cmd=

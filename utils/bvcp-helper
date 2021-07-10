@@ -27,12 +27,12 @@ load_rc_config "$name"
 
 start_precmd="bvcp_prestart"
 
-/usr/sbin/service bvcp-backend status || err 4 "BVCP Backend is not running yet"
+#/usr/sbin/service bvcp-backend status || err 4 "BVCP Backend is not running yet"
 
 command=/var/lib/nPulse/BVCP/Backend/vmm
 required_dirs=/var/lib/nPulse/BVCP/Backend
 required_files=/var/lib/nPulse/BVCP/Backend/vmm
-start_cmd="sleep 2 && $command --daemon /var/lib/nPulse/BVCP/Backend /var/run/bvcp-helper.pid"
+start_cmd="$command --daemon /var/lib/nPulse/BVCP/Backend /var/run/bvcp-helper.pid helper"
 
 start_precmd=
 reload_cmd=

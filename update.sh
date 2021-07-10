@@ -10,7 +10,6 @@ service bvcp-frontend stop
 service bvcp-helper stop
 service bvcp-backend stop
 
-mkdir -p /var/lib/nPulse/BVCP
 cp -R ./API/ /var/lib/nPulse/BVCP/API/
 cp -R ./Backend/ /var/lib/nPulse/BVCP/Backend/
 cp -R ./Frontend/ /var/lib/nPulse/BVCP/Frontend/
@@ -21,10 +20,8 @@ cp ./utils/bvcp-frontend /usr/local/etc/rc.d/bvcp-frontend
 cp ./utils/bvcp-helper /usr/local/etc/rc.d/bvcp-helper
 
 cd /var/lib/nPulse/BVCP/Helper
+rm ./vmctl
 clang -o vmctl vmctl.c
-
-#cd ../Backend/
-#./vmm setup
 
 service bvcp-backend start
 service bvcp-helper start
