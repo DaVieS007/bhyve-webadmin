@@ -1,3 +1,7 @@
+v.1.0-rc6
+2021.07.19: VNC related network optimizations
+2021.07.19: Now, Bhyve VNC Server listens only localhost
+
 v.1.0-rc5
 2021.07.10: Security Fix: SQLite AUTO_INCREMENT behaviour allows newly created user to re-assign deleted user's IDs.
 2021.07.10: Fix: Password stored wrong when new user created

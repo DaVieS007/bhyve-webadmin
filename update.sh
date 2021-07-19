@@ -20,7 +20,9 @@ cp ./utils/bvcp-frontend /usr/local/etc/rc.d/bvcp-frontend
 cp ./utils/bvcp-helper /usr/local/etc/rc.d/bvcp-helper
 
 cd /var/lib/nPulse/BVCP/Helper
-rm ./vmctl
+rm -f ./vmctl.old
+mv ./vmctl vmctl.old
+chmod 644 ./vmctl.old
 clang -o vmctl vmctl.c
 
 service bvcp-backend start
