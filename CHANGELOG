@@ -1,3 +1,6 @@
+v.1.0-rc7
+2021.07.20: Fixed broken [sysinfo] page, HTTP/500
+
 v.1.0-rc6
 2021.07.19: VNC related network optimizations
 2021.07.19: Now, Bhyve VNC Server listens only localhost
