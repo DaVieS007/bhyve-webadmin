@@ -1,15 +1,23 @@
 # BVCP Application (Bhyve Virtual-Machine Control Panel)
 
-**Current Version: 1.0-Release Candidate**
+**Current Version: 1.2-Release**
+
+## In Nutshell
+BVCP is a graphical and secure webcontrol panel for FreeBSD Bhyve's Virtual Machines.
+BVCP is made with love and for enterprise use, 24/7 NON-STOP operation, tested on production enterprise-class area.
+Unlike many others, BVCP is just a native application/software for FreeBSD with a one-click-install feature.
+BVCP is shall not interfere or modify your system settings it can be run at most of environments.
+BVCP can handle more physical hosts with one interface without clustering.
+Fun Fact: The software made within 4 months.
 
 ## Introduction
 This is a personal project from the author of nPulse.net, Viktor Hlavaji (DaVieS).
 nPulse.net is always willing to share knowledge and resources with others, and I have 10+ experience of making industry-class / enterprise-class softwares.
 
-The first publicly available release for professional use, it does have a Graphical user Interface via webinterface and also a CLI and an API.
-The software provides webinterface to manage Virtual Machines.
+It does have a Graphical user Interface via webinterface and also a CLI and an API.
+The software provides webGUI to let you manage Virtual Machines remotely.
 
-The software is uses our framework "Kinga Framework" which is used in various enterprise-class products.
+The software is uses our framework "Kinga Framework" which is used in various enterprise-class products already since 2017.
 Mostly written in C/C++.
 The software has its components:
 - Frontend (Web Interface)
@@ -25,24 +33,19 @@ Please refer to the website for more informations: [bhyve.npulse.net](https://bh
 <img src="screenshots/scr589.png" width="415" alt="Running Linux VM"> <img src="screenshots/scr587.png" width="415" alt="Dashboard">
 
 ## Bhyve
-Bhyve is a supervisor of FreeBSD, and this software requires and only works on FreeBSD 12+.
+Bhyve is a hypervisor of FreeBSD, this software requires that and FreeBSD 12+.
 
 ## License: Community Free-Of-Charge Edition
-- You can download, install and use the BVCP Application without any charges and limitations.
-- You can not modify, disassemble, resell, redistribute, sell, to rent, etc..
-- You are allowed to upload screenshots and videos from the application itself in purpose of documentation, tutorial, how-to
-- Please refer to the LICENSE for more infomrations.
+- You can download, install and use the BVCP Application for without any charges and limitations including commercial.
+- You can not modify the binaries, disassemble the binaries, resell the software, redistribute the software, etc..
+- You are allowed to upload screenshots and videos from the application itself in purpose of documentation, tutorial, HOWTOs
+- Please refer to the LICENSE for more informations.
 
 ## Installation
 ### Minimum Requirements
-- Latest or at least a FreeBSD 12 installed onto your target machine with virtualisation capable amd64 architecture.
+- At least a FreeBSD 12+ installed onto your target machine with virtualisation capable amd64 architecture.
 - Minimum 250MB of free space on /var/lib for the binaries
 - Network interface
-
-### Prerequisites
-- Ensure that you do not have bridge and tap interfaces between number 300 - 900, (tap303, bridge550), BVCP will be use between 300 and 900 to not interfere other applications.
-- Ensure that you have a network card that can be used as `Bridged` network or for more advanced setup check the `Configure NAT Network` from the menu.
-- Ensure that `/var/lib` directory is writable and so `/etc/rc.conf` (file), `/usr/local/etc/rc.d` (directory), they are normally are.
 
 #### 1) Log in to your FreeBSD Box and bring-up a root shell
     root@vmhost:~ #
