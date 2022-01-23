@@ -1,6 +1,6 @@
 # BVCP Application (Bhyve Virtual-Machine Control Panel)
 
-**Current Version: 1.4-Release**
+**Current Version: 1.6-Release**
 
 ## In Nutshell
 BVCP is a graphical and secure webcontrol panel for FreeBSD Bhyve's Virtual Machines.
