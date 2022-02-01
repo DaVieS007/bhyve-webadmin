@@ -1,4 +1,5 @@
 v.1.6-release
+2022.02.01: Fixed wrong signature that caused the software could not start
 2022.01.23: Fixed IPv4 & IPv6 Dual Stack caused session troubles
 2022.01.23: Fixed bad SQL query on authlog, now displays actual entries in right order even if it has more than 500 entries
 2022.01.23: Added a safe technique if the user IP flapping between IPv4 and IPv6 that was mostly caused websocket errors
