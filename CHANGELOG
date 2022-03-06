@@ -1,3 +1,14 @@
+v.1.8-release
+2022.03.05: Newly added Network Card is enabled by default
+2022.03.05: Fix backend throwing critical error when VM could not start properly (likely on special hardwares)
+2022.03.05: Fix worker throwing error when node is disconnected while operating
+2022.03.05: Added some default options when creating new VM
+2022.03.05: Removed automatic boot & now the default behaviour restore last state
+2022.03.05: Fix UI, incorrectly shows ISO images and deleted NICs
+2022.03.06: UI Fixes and improvements
+2022.03.06: Custom UEFI Firmware with BOOT delay and post message
+2022.03.06: fixed error: "the index '4' does not exist"
+
 v.1.6-release
 2022.02.01: Fixed wrong signature that caused the software could not start
 2022.01.23: Fixed IPv4 & IPv6 Dual Stack caused session troubles
