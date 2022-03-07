@@ -1,3 +1,9 @@
+v.1.8.2-release
+2022.03.07: Minor Version number added due a more frequent releases
+2022.03.07: Hugely performance improvements on Windows Guests
+2022.03.07: Performance Improvements on networking code
+2022.03.07: Fixes UI glitches (mixing languages)
+
 v.1.8-release
 2022.03.05: Newly added Network Card is enabled by default
 2022.03.05: Fix backend throwing critical error when VM could not start properly (likely on special hardwares)
