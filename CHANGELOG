@@ -1,3 +1,7 @@
+v.1.8.4-release
+2022.03.30: Added Sata/Legacy (512B) HDD Option for instances those requires 512B physical sector size like MSSQL
+2022.03.30: Adaptive Cache on VMs, removing and adding CDrom drives now will take affect on first boot.
+
 v.1.8.2-release
 2022.03.07: Minor Version number added due a more frequent releases
 2022.03.07: Hugely performance improvements on Windows Guests
