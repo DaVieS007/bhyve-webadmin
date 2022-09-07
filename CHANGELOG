@@ -1,3 +1,21 @@
+v.1.9.0-release
+2022.09.07: Code cleanup and overall speed improvement
+2022.09.05: Fix rare event where send buffer remains untouched (intr)
+2022.09.05: framework upgrade, small changes on logging system
+2022.09.05: Changing existing NIC's MAC Address
+2022.09.04: Fix when new switch created and interface not bound if selected
+2022.09.03: Grammar Fixes, Better displaying backend errors
+2022.09.02: Fix Interface MTU will be adjusted to the bridge
+2022.09.02: Fix (_) and whitespace markings on network switches cause problems
+2022.09.01: Fix Mail Queue Loop, Mail ::PORT missing variable
+2022.09.01: Added ioctl() MTU readings to able to adjust bridge with bound device
+2022.08.15: VNC proxy now quickier, but still no compression
+2022.08.10: Highly optimized networking stack, running with much less CPU cycles while response time kick in.
+2022.07.19: explode, implode, concat inner functions now uses C/C++ low level API with string pointers.
+2022.07.11: stdin, stderr, stdout wont close on service mode while dont mess up the console
+2022.06.02: framework upgrade, adaptive network stack with variable socketpool
+2022.05.15: Fix MAC addresses are not applied on tap devices
+
 v.1.8.4-release
 2022.03.30: Added Sata/Legacy (512B) HDD Option for instances those requires 512B physical sector size like MSSQL
 2022.03.30: Adaptive Cache on VMs, removing and adding CDrom drives now will take affect on first boot.
