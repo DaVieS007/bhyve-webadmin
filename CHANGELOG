@@ -1,4 +1,10 @@
 v.1.9.0-release
+2022.09.08: Add more security to VNC/Console against replay-attack
+2022.09.08: Fix new syscall (proc_open) closing random file descriptor when initialises due condition race [framework-issue]
+2022.09.08: Fix VNC/Console resource wasting when nobody attached to console
+2022.09.08: Fix CPU loop on main thread due socket pipes [framework-issue]
+2022.09.07: Fix DProtocol length too small error
+2022.09.07: Release rollback before launch due compatibility issues with new framework
 2022.09.07: Code cleanup and overall speed improvement
 2022.09.05: Fix rare event where send buffer remains untouched (intr)
 2022.09.05: framework upgrade, small changes on logging system
