@@ -1,3 +1,6 @@
+v.1.9.0-release-p1
+2022.09.09: hotfix broken cdrom drives
+
 v.1.9.0-release
 2022.09.09: Fix nullptr termination on challenge key
 2022.09.09: Fix ssl handshake error on high latency networks [framework-issue]
