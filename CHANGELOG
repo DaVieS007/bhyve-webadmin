@@ -1,4 +1,6 @@
 v.1.9.0-release
+2022.09.09: Fix nullptr termination on challenge key
+2022.09.09: Fix ssl handshake error on high latency networks [framework-issue]
 2022.09.08: Add more security to VNC/Console against replay-attack
 2022.09.08: Fix new syscall (proc_open) closing random file descriptor when initialises due condition race [framework-issue]
 2022.09.08: Fix VNC/Console resource wasting when nobody attached to console
