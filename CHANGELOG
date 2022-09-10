@@ -1,3 +1,7 @@
+v1.9.0-release-p2
+2022.09.10: fix SSL_Accept() hang when non-https requests sent to the server [framework-issue]
+2022.09.10: fix Malformed HTTP headers sent back when protocol not defined
+
 v.1.9.0-release-p1
 2022.09.09: hotfix broken cdrom drives
 
