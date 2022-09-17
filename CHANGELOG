@@ -1,4 +1,9 @@
-v1.9.0-release-p2
+v.1.9.0-release-p3
+2022.09.17: fix websocket-hybi condition race with opcode [framework-issue]
+2022.09.17: fix serialization become corrupted when class are used
+2022.09.17: fix DProtocol stuck in loop in rare circumstances
+
+v.1.9.0-release-p2
 2022.09.10: fix SSL_Accept() hang when non-https requests sent to the server [framework-issue]
 2022.09.10: fix Malformed HTTP headers sent back when protocol not defined
 
