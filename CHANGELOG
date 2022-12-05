@@ -1,3 +1,13 @@
+v.1.9.2-release
+NOTE: This release contains only optimisations and bugfixes.
+2022.12.05: Fix invalid array assign when listing mounted filesystems, merge with b213 framework
+2022.11.20: using conditional_locks and dynamic mutexers for speed improvements [framework]
+2022.11.18: new TCP & UDP network stack for future use like for VNC-PROXY [framework]
+2022.10.05: Mutexing some ambiguous fs syscall [condition-race] (OS-BUG) [framework]
+2022.10.02: Fix memory leak at hashing functions [framework-issue]
+2022.09.30: Better Logger buffering and output [framework]
+2022.09.25: (High-Availability) Guardian implementation both on frontend and backend [framework]
+
 v.1.9.0-release-p3
 2022.09.17: fix websocket-hybi condition race with opcode [framework-issue]
 2022.09.17: fix serialization become corrupted when class are used
