@@ -1,5 +1,6 @@
 v.1.9.2-release
 NOTE: This release contains only optimisations and bugfixes.
+2022.12.06: Threadpool fix that is not affecting on FreeBSD, but for sure.
 2022.12.05: Fix invalid array assign when listing mounted filesystems, merge with b213 framework
 2022.11.20: using conditional_locks and dynamic mutexers for speed improvements [framework]
 2022.11.18: new TCP & UDP network stack for future use like for VNC-PROXY [framework]
