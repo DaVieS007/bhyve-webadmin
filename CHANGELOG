@@ -1,3 +1,11 @@
+v.1.9.4-release
+NOTE: This release contains only optimisations and bugfixes.
+2022.12.21: Fixed DProtocol Error messages
+2022.12.21: Fixed error when config contains invalid email and mail could not be sent
+2022.12.21: Showing version name on both Backend and Frontend
+2022.12.21: Fixed RFB Protocol invalid data handling
+2022.12.20: Fixed thread-pool memory issues which causes instability on some systems
+
 v.1.9.2-release
 NOTE: This release contains only optimisations and bugfixes.
 2022.12.06: Threadpool fix that is not affecting on FreeBSD, but for sure.
