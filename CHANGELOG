@@ -1,3 +1,14 @@
+v.1.9.6-release
+NOTE: This release contains only optimisations and bugfixes.
+2022.01.14: Fixed error `the index 'mount' does not exist at application/vmclient/web/webadmin/vm/Forms/inline_cdrom.c(59)`
+2022.01.14: Fixed error `the index 'meta' does not exist at application/vmclient/web/webadmin/vm/Forms/inline_cdrom.c(68)`
+2022.01.03: Fixed error `the index 'stat' does not exist at application/vmclient/web/webadmin/connect/main.c(111)`
+2022.01.03: Fixed error `the index 'mail' does not exist at utils/Mailer.class.c(1230)`
+2022.01.03: Fixed error `the index 'description' does not exist at application/vmclient/web/webadmin/dashboard/main.c(120)`
+2022.01.03: Fixed error `the index '1' does not exist at application/vmclient/web/webadmin/core/bvcp_auth.c(271)`
+2022.12.28: Fixed error `the index 'switch' does not exist at application/vmclient/web/webadmin/vm/Forms/inline_nic_add.c(50)`
+2022.12.28: Fixed error `the index 'PID' does not exist at application/vmserver/rfb//handle.c(53)`
+
 v.1.9.4-release
 NOTE: This release contains only optimisations and bugfixes.
 2022.12.21: Fixed DProtocol Error messages
