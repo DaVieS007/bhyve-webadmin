@@ -1,5 +1,6 @@
 v.1.9.6-release
 NOTE: This release contains only optimisations and bugfixes.
+2022.01.15: Fixed error `the index 'storage' does not exist at application/vmclient/web/webadmin/vm/Forms/inline_hdd_add.c(51)`
 2022.01.14: Fixed error `the index 'mount' does not exist at application/vmclient/web/webadmin/vm/Forms/inline_cdrom.c(59)`
 2022.01.14: Fixed error `the index 'meta' does not exist at application/vmclient/web/webadmin/vm/Forms/inline_cdrom.c(68)`
 2022.01.03: Fixed error `the index 'stat' does not exist at application/vmclient/web/webadmin/connect/main.c(111)`
