@@ -1,12 +1,23 @@
+v.1.9.8-release
+2023.03.15: RFB/VNC Fixes hangup when multiple connections made up to the Bhyve
+2023.03.15: RFB/VNC Fixes wrong nullptr randomly cause API Key mismatch error
+2023.03.08: Pretty Colored Console Output
+2023.03.04: RFB/VNC encapsulated TLS Traffic now uses AES and Compression instead for better latency times
+2023.02.18: Fixed errors when invalid arguments omitted in http requests
+2023.02.04: Fixed previously badly fixed error `the index 'stat' does not exist at application/vmclient/web/webadmin/connect/main.c(111)`
+2023.02.02: Fixed API missing arguments cause error due invalid calculations of parameters
+2023.02.01: Improved network for PIPES, vnc connections are now faster [framework]
+2023.01.28: Fixed shutdown hangups by using valid reference counters on desctructors [framework]
+
 v.1.9.6-release
 NOTE: This release contains only optimisations and bugfixes.
-2022.01.15: Fixed error `the index 'storage' does not exist at application/vmclient/web/webadmin/vm/Forms/inline_hdd_add.c(51)`
-2022.01.14: Fixed error `the index 'mount' does not exist at application/vmclient/web/webadmin/vm/Forms/inline_cdrom.c(59)`
-2022.01.14: Fixed error `the index 'meta' does not exist at application/vmclient/web/webadmin/vm/Forms/inline_cdrom.c(68)`
-2022.01.03: Fixed error `the index 'stat' does not exist at application/vmclient/web/webadmin/connect/main.c(111)`
-2022.01.03: Fixed error `the index 'mail' does not exist at utils/Mailer.class.c(1230)`
-2022.01.03: Fixed error `the index 'description' does not exist at application/vmclient/web/webadmin/dashboard/main.c(120)`
-2022.01.03: Fixed error `the index '1' does not exist at application/vmclient/web/webadmin/core/bvcp_auth.c(271)`
+2023.01.15: Fixed error `the index 'storage' does not exist at application/vmclient/web/webadmin/vm/Forms/inline_hdd_add.c(51)`
+2023.01.14: Fixed error `the index 'mount' does not exist at application/vmclient/web/webadmin/vm/Forms/inline_cdrom.c(59)`
+2023.01.14: Fixed error `the index 'meta' does not exist at application/vmclient/web/webadmin/vm/Forms/inline_cdrom.c(68)`
+2023.01.03: Fixed error `the index 'stat' does not exist at application/vmclient/web/webadmin/connect/main.c(111)`
+2023.01.03: Fixed error `the index 'mail' does not exist at utils/Mailer.class.c(1230)`
+2023.01.03: Fixed error `the index 'description' does not exist at application/vmclient/web/webadmin/dashboard/main.c(120)`
+2023.01.03: Fixed error `the index '1' does not exist at application/vmclient/web/webadmin/core/bvcp_auth.c(271)`
 2022.12.28: Fixed error `the index 'switch' does not exist at application/vmclient/web/webadmin/vm/Forms/inline_nic_add.c(50)`
 2022.12.28: Fixed error `the index 'PID' does not exist at application/vmserver/rfb//handle.c(53)`
 
