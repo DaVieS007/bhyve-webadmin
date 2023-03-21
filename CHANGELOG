@@ -1,4 +1,5 @@
 v.1.9.8-release
+2023.03.21: HOTFIX: Detached disks are not removed properly
 2023.03.15: RFB/VNC Fixes hangup when multiple connections made up to the Bhyve
 2023.03.15: RFB/VNC Fixes wrong nullptr randomly cause API Key mismatch error
 2023.03.08: Pretty Colored Console Output
