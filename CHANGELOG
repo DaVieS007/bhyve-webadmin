@@ -1,3 +1,12 @@
+v.1.9.8-p1-release
+NOTE: This release contains only optimisations and bugfixes.
+2023.04.08: Better Error Handling
+2023.04.01: Update ZLIB does not cause exit when throw error
+2023.04.01: Updated builtin CA-Certificates
+2023.04.01: Updated OUI Database
+2023.04.01: Improved Network latency between nodes
+2023.04.01: Fixed HTTP issues when CRLF packets comes lately and not using TLS/SSL
+
 v.1.9.8-release
 2023.03.21: HOTFIX: Detached disks are not removed properly
 2023.03.15: RFB/VNC Fixes hangup when multiple connections made up to the Bhyve
