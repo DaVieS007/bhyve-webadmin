@@ -1,7 +1,7 @@
 v.1.9.8-p1-release
 NOTE: This release contains only optimisations and bugfixes.
 2023.04.08: Better Error Handling
-2023.04.01: Update ZLIB does not cause exit when throw error
+2023.04.01: ZLIB does not cause exit when throw error
 2023.04.01: Updated builtin CA-Certificates
 2023.04.01: Updated OUI Database
 2023.04.01: Improved Network latency between nodes
