@@ -1,3 +1,8 @@
+v.1.9.8-p2-release
+2023.04.18: FIX: Error when no mail address or hostname given
+2023.04.17: FIX: Missing or broken Disks are able to force remove from VM
+2023.04.16: Fixed NVME IDs unintentionally includes (")
+
 v.1.9.8-p1-release
 NOTE: This release contains only optimisations and bugfixes.
 2023.04.08: Better Error Handling
