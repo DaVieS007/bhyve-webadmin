@@ -1,7 +1,22 @@
+Future Release ( What we are working on ): v.2.x.x
+ - PCI Passthrough
+ - Advanced Configuration
+ - Virt/IO Input
+ - Better VNC Support
+ - Guest Additions
+ - FreeBSD Guest console mouse Issues
+ - Two Factor Authentication
+
+v.1.9.8-p3-release
+2023.04.26: Fixed error `the index 'state' does not exist at application/vmclient/web/webadmin/vm/details.c(723)`
+2023.04.26: Fixed error `the index 'msg' does not exist at utils/Mailer.class.c(1071)`
+2023.04.26: Fixed error `the index 'meta' does not exist at application/vmclient/web/webadmin/vm/details.c(461)`
+2023.04.26: Fixed error `the index 'SID' does not exist at bhyve/vm_disk.class.c(375)`
+
 v.1.9.8-p2-release
-2023.04.18: FIX: Error when no mail address or hostname given
-2023.04.17: FIX: Missing or broken Disks are able to force remove from VM
-2023.04.16: Fixed NVME IDs unintentionally includes (")
+2023.04.18: Fixed error when the system tries to send email to a non-email address
+2023.04.17: Missing or broken Disks are able to force remove from VM
+2023.04.16: (IMPORTANT CHANGE) Fixed NVME IDs unintentionally includes (") which FreeBSD guests display as %22
 
 v.1.9.8-p1-release
 NOTE: This release contains only optimisations and bugfixes.
