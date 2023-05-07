@@ -6,6 +6,15 @@ Future Release ( What we are working on ): v.2.x.x
  - Guest Additions
  - FreeBSD Guest console mouse Issues
  - Two Factor Authentication
+ - Persistent Charts
+ - More Charts
+ - Better UEFI Support
+ - Mail reports on errors, like (filesystem full)
+
+v.1.9.8-p4-release
+2023.05.07: Fix stucked or our-of-sync filesystem statistics
+2023.05.01: Fixed errors which comes from debugging enabled
+2023.04.30: Fixed HTTP Server Error, inproperly handling partially received data causes errors
 
 v.1.9.8-p3-release
 2023.04.26: Fixed error `the index 'state' does not exist at application/vmclient/web/webadmin/vm/details.c(723)`
