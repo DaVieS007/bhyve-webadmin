@@ -11,8 +11,14 @@ Future Release ( What we are working on ): v.2.x.x
  - Better UEFI Support
  - Mail reports on errors, like (filesystem full)
 
+v.1.9.8-p5-release
+2023.05.29: Code cleanup
+2023.05.20: BVCP now fault tolarent, errors wont disrupt the normal workflow
+2023.05.16: Fix negative numbers against gmtime(&) cause random behavior on some systems [framework]
+2023.05.15: Fix conditional-race winning on thread-pool code [framework]
+
 v.1.9.8-p4-release
-2023.05.07: Fix stucked or our-of-sync filesystem statistics
+2023.05.07: Fix stucked or out-of-sync filesystem statistics
 2023.05.01: Fixed errors which comes from debugging enabled
 2023.04.30: Fixed HTTP Server Error, inproperly handling partially received data causes errors
 
