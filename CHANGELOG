@@ -1,15 +1,24 @@
 Future Release ( What we are working on ): v.2.x.x
- - PCI Passthrough
- - Advanced Configuration
- - Virt/IO Input
+ - PCI Passthrough W.I.P.
+ - Advanced Configuration W.I.P.
+ - Virt/IO Input W.I.P.
+ - More Charts W.I.P.
+ - Persistent Charts
  - Better VNC Support
  - Guest Additions
  - FreeBSD Guest console mouse Issues
  - Two Factor Authentication
- - Persistent Charts
- - More Charts
  - Better UEFI Support
  - Mail reports on errors, like (filesystem full)
+
+v.1.9.8-p6-release
+2023.07.23: small UI fixes
+2023.07.20: fix bug related to missing POST fields when modifying disks
+2023.07.12: proc_open hung up on older systems when pipes have data left
+2023.06.21: Memory Leak fix: Send Buffers did not released correctly
+2023.06.12: Fix Not Supported headers on invalid HTTP versions
+2023.06.12: Fix HTTP/1.1 C100 response on PUT requests
+2023.06.11: Fix errors when client sends malformed HTTP packets
 
 v.1.9.8-p5-release
 2023.05.29: Possible fix for VNC shutdowns, flickering
