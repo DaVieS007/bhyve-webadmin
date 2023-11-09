@@ -11,6 +11,9 @@ Future Release ( What we are working on ): v.2.x.x
  - Better UEFI Support
  - Mail reports on errors, like (filesystem full)
 
+v.1.9.8-p7-release
+2023.11.09: Adding additional parameters to a self-signed certificate at install to comply with newest requirements in Chrome Browsers
+
 v.1.9.8-p6-release
 2023.07.23: small UI fixes
 2023.07.20: fix bug related to missing POST fields when modifying disks
