@@ -12,7 +12,7 @@ Future Release ( What we are working on ): v.2.x.x
  - Mail reports on errors, like (filesystem full)
 
 v.1.9.8-p9-release
-2021.04.02: Implement protocol version-3 but uses 2 by default for compatibility
+2024.01.02: Implement protocol version-3 but uses 2 by default for compatibility
 2023.11.30: Updated ABC, Numeric short method on select input now correctly rearrange items by alphabet order
 2023.11.30: Better support for symlinks, correctly shows the target size
 2023.11.30: Fix error when the connection aborts between frontend - backend and the query parameters contains non-string type
