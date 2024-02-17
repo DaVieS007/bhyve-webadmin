@@ -176,7 +176,7 @@ int main(int argc, char* argv[])
 
         chdir(argv[1]);
 
-        int fd = open(log_file, O_WRONLY, 0600);
+        int fd = open(log_file, O_CREAT | O_WRONLY | O_TRUNC, 0600);
         if(fd)
         {
             dup2(fd, STDOUT_FILENO); // Check `man stdin` for more info
