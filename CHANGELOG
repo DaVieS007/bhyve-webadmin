@@ -1,15 +1,31 @@
 Future Release ( What we are working on ): v.2.x.x
- - PCI Passthrough W.I.P.
- - Advanced Configuration W.I.P.
- - Virt/IO Input W.I.P.
- - More Charts W.I.P.
- - Persistent Charts
- - Better VNC Support
+ - More Charts
  - Guest Additions
  - FreeBSD Guest console mouse Issues
  - Two Factor Authentication
- - Better UEFI Support
  - Mail reports on errors, like (filesystem full)
+
+
+v.2.0.0-release (!!!!!)
+2024.02.17: Better garbage collection mechanism
+2024.02.17: Security Prompt when user using default admin account
+2024.02.17: Fixed native bhyve logging
+2024.02.17: Add Option to set host's TAP IP Address (useful for special routing cases with pfSense)
+2024.02.17: Added feature: UEFI Storage to save UEFI settings
+2024.02.17: Mutexing noVNC concurrent sessions, admins grab axplicit lock over the console
+2024.02.17: noVNC can handle VM Power Options (start, stop, restart, shutdown), better BVCP integration
+2024.02.17: Reduced Memory footprint
+2024.02.15: Added support for PCI-Passthrough DMAR, AMDVi
+2024.02.14: Added Backend compatibility check
+2024.02.14: Preserve Machine Statistics
+2024.02.14: Database structure & serialization optimisation
+2024.02.11: Dashboard interface now contains VERY USEFUL node statistics, warnings and alerts
+2024.02.11: Fix race condition which cause the software does not exit - just hangs -
+2024.02.11: Significantly improved the overall speed by changing JIT mechanism
+2024.02.02: Fix `the index 'state' does not exist at application/vmclient/web/webadmin/dashboard/main.c(96)` related errors
+2024.02.02: Fix `the index 'name' does not exist at application/vmclient/web/webadmin/vm/list.c(109)` error
+2024.02.02: Max allowed CPU Count adjusted to sysctl variables
+2024.02.02: Better way to check of requirements of bhyve core, IOMMU, max cpu count
 
 v.1.9.8-p9-release
 2024.01.02: Implement protocol version-3 but uses 2 by default for compatibility
