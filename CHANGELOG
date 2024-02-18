@@ -5,8 +5,8 @@ Future Release ( What we are working on ): v.2.x.x
  - Two Factor Authentication
  - Mail reports on errors, like (filesystem full)
 
-
-v.2.0.0-release (!!!!!)
+v.2.0.2-release (!!!!!)
+2024.02.18: Hotfix: Fix some startup issues following migration process, `the index 'time' does not exist`, `the index 'custom' does not exist`
 2024.02.17: Better garbage collection mechanism
 2024.02.17: Security Prompt when user using default admin account
 2024.02.17: Fixed native bhyve logging
