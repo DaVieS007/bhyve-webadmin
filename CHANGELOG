@@ -5,7 +5,8 @@ Future Release ( What we are working on ): v.2.x.x
  - Two Factor Authentication
  - Mail reports on errors, like (filesystem full)
 
-v.2.0.4-release (!!!!!)
+v.2.0.6-release (!!!!!)
+2024.02.18: Hotfix: Edit Name / Description leads to an error
 2024.02.18: Hotfix: Add support to older systems and an update warning.
 2024.02.18: Hotfix: When add Intel-1000 legacy adapter two of them appear.
 2024.02.18: Hotfix: Possibly get rid of remaining startup issues by clearing vminfo cache, by renaming it into new key.
