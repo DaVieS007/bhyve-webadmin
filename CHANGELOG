@@ -1,11 +1,8 @@
-Future Release ( What we are working on ): v.2.x.x
- - More Charts
- - Guest Additions
- - FreeBSD Guest console mouse Issues
- - Two Factor Authentication
- - Mail reports on errors, like (filesystem full)
+WARNING, BEFORE YOU UPDATE FROM V1 TO V2:
+From version 2.x PCI Device IDs are statically assigned, that can cause Guest Virtual Machines might be needs to be adjusted.
+From version 2.x maximum allowed ISO mounts is limited to 6, maximum Virtual Disks are 12 and 8 extra PCI slot including (NIC, Passthru) devices.
 
-v.2.1.0-release
+v.2.1.0-p1-release
 2024.02.20: Added correct boot order, padding PCI slots to avoid EFI shell prompted on first place
 2024.02.20: System accept fraction numbers for memory settings, also displaying correctly up to 2 decimal points
 2024.02.20: Fixed reconnection issue that elliminates (partial data received warnings)
