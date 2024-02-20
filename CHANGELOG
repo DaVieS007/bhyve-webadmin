@@ -5,7 +5,19 @@ Future Release ( What we are working on ): v.2.x.x
  - Two Factor Authentication
  - Mail reports on errors, like (filesystem full)
 
-v.2.0.8-release (!!!!!)
+v.2.1.0-release
+2024.02.20: System accept fraction numbers for memory settings, also displaying correctly up to 2 decimal points
+2024.02.20: Fixed reconnection issue that elliminates (partial data received warnings)
+2024.02.20: Hardware configuration now colored to determine easier what configuration an user can modify
+2024.02.20: Better ajax calls on VM list, VMs are displayed realtime
+2024.02.20: Added loading screen to pages that might loads slower
+2024.02.20: Show assigned users on the list page
+2024.02.20: Allow edit VM description by the user
+2024.02.19: Added option to reset UEFI BIOS Settings.
+2024.02.19: FIX: Minor HDD LUN numbers (collision avoidance) could changed according to directory cache and file names, now they are assigned to database ID.
+2024.02.19: Automatically re-set log, uefi files permissions to 0600 for security reasons despite the folder settings.
+
+v.2.0.8-release
 2024.02.18: Hotfix: `wrong number of parameters (2 passed, 4 required) at application/vmclient/web/webadmin/vm/Forms/create_vm.c(130)`
 2024.02.18: Hotfix: Edit Name / Description leads to an error
 2024.02.18: Hotfix: Add support to older systems and an update warning.
