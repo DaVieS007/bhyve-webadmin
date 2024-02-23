@@ -2,6 +2,13 @@ WARNING, BEFORE YOU UPDATE FROM V1 TO V2:
 From version 2.x PCI Device IDs are statically assigned, that can cause Guest Virtual Machines might be needs to be adjusted.
 From version 2.x maximum allowed ISO mounts is limited to 6, maximum Virtual Disks are 12 and 8 extra PCI slot including (NIC, Passthru) devices.
 
+v.2.1.2-release
+2024.02.23: Allow attach and create new disk at the same time
+2024.02.23: Allow modify disk when detached or foreign
+2024.02.23: Fix error when foreign or missing disk presents (`the index '1' does not exist at application/vmclient/web/webadmin/vm/details.c(685)`)
+2024.02.20: Fix missing incoming connection on sysinfo menu
+2024.02.20: Change layout to 5-7 on dashboard
+
 v.2.1.0-p1-release
 2024.02.20: Added correct boot order, padding PCI slots to avoid EFI shell prompted on first place
 2024.02.20: System accept fraction numbers for memory settings, also displaying correctly up to 2 decimal points
