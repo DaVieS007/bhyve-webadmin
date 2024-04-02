@@ -2,6 +2,12 @@ WARNING, BEFORE YOU UPDATE FROM V1 TO V2:
 From version 2.x PCI Device IDs are statically assigned, that can cause Guest Virtual Machines might be needs to be adjusted.
 From version 2.x maximum allowed ISO mounts is limited to 6, maximum Virtual Disks are 12 and 8 extra PCI slot including (NIC, Passthru) devices.
 
+v.2.1.4-release
+2024.04.02: Added better implementation of truncate() and warning
+2024.04.02: Fix resize disk truncate() error when the input isn't natural number
+2024.04.02: Fix resize disk above 1TB cause truncate() error, because of scientific notations
+2024.03.29: Fix error message contains variable which does not exists [GHUB-55]
+
 v.2.1.2-release
 2024.02.23: Allow attach and create new disk at the same time
 2024.02.23: Allow modify disk when detached or foreign
