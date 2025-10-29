@@ -218,7 +218,7 @@ error_reporting(E_ALL^E_NOTICE);
             }
 
 
-            $header = "D".$code.".".$this->protocol_version.".".strlen($arr).".".strlen($data).".";
+            $header = "D".$code.".".$this->protocol_version.".".strlen($arr ?? '').".".strlen($data ?? '').".";
             if($this->key)
             {
                 $header .= "1";
