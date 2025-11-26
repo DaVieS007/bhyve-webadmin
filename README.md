@@ -27,9 +27,9 @@ The architecture is modular and consists of the following key components:
 Please refer to the website for more informations: [bhyve.npulse.net](https://bhyve.npulse.net)
 
 ## ScreenShots
-<img src="screenshots/scr599.png" width="350" alt="API CLI Interface"> <img src="screenshots/scr597.png" height="251" alt="Login Area">
-<img src="screenshots/scr592.png" width="420" alt="Running Windows VM"> <img src="screenshots/scr590.png" width="420" alt="GUI Looklike">
-<img src="screenshots/scr589.png" width="415" alt="Running Linux VM"> <img src="screenshots/scr587.png" width="415" alt="Dashboard">
+<img src="screenshots/scr599a.png" width="350" alt="API CLI Interface"> <img src="screenshots/scr597a.png" height="251" alt="Login Area">
+<img src="screenshots/scr592a.png" width="420" alt="Running Windows VM"> <img src="screenshots/scr590a.png" width="420" alt="GUI Looklike">
+<img src="screenshots/scr589a.png" width="415" alt="Running Linux VM"> <img src="screenshots/scr587a.png" width="415" alt="Dashboard">
 
 ## Bhyve
 The software requires an environment running FreeBSD 13.4-RELEASE or newer with the bhyve hypervisor enabled to function correctly. The underlying FreeBSD system and hardware must meet these specifications for full compatibility and optimal operation with this project.
