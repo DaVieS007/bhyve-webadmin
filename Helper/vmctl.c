@@ -11,7 +11,7 @@
 typedef char bool;
 
 #define BHYVE_BIN "/usr/sbin/bhyve"
-
+//NEW
 bool writeFile(char *filename, char *data)
 {
     FILE *fp= NULL;
@@ -119,22 +119,8 @@ int main(int argc, char* argv[])
     log_file[0] = 0x00;
     sprintf(log_file,"%s/log",base_path);
 
-
-    if(run == true)
-    {
-        pid_file[0] = 0x00;
-        sprintf(pid_file,"%s/vm.pid",base_path);
-    }
-    else
-    {
-        pid_file[0] = 0x00;
-        sprintf(pid_file,"%s/ctl.pid",base_path);
-    }
-
     res_file[0] = 0x00;
     sprintf(res_file,"%s/vm.exit",base_path);
-    fprintf(stdout,"Root Path: %s\nBase Path: %s\nPrefix: %s\n",root_path,base_path,prefix);
-
 
     if(is_dir(base_path) == false)
     {
@@ -148,51 +134,13 @@ int main(int argc, char* argv[])
         exit(10);
     }
 
-    if(!run)
-    {
-        PID = fork();
-        if (PID < 0)
-        {
-            fprintf(stderr,"Fork Failed!\n");
-            exit(2);
-        }
-
-        if (PID > 0)
-        {
-            buff[0] = 0x00;
-            sprintf(buff,"%d",PID);
-            writeFile(pid_file,buff);
-
-            fprintf(stdout,"Started\n");
-            exit(0);
-        }
-
-        umask(0);
-        SID = setsid();
-        if(SID < 0)
-        {
-            exit(1);
-        }
-
-        chdir(argv[1]);
-
-        int fd = open(log_file, O_CREAT | O_WRONLY | O_TRUNC, 0600);
-        if(fd)
-        {
-            dup2(fd, STDOUT_FILENO); // Check `man stdin` for more info
-            dup2(fd, STDERR_FILENO);            
-        }
-
-        close(STDIN_FILENO);
-/*
-        close(STDOUT_FILENO);
-        close(STDERR_FILENO);
-*/        
-    }
-
-    
     if(run == true)
     {
+        chdir(argv[1]);
+
+        pid_file[0] = 0x00;
+        sprintf(pid_file,"%s/vm.pid",base_path);
+
         PID = getpid();
         buff[0] = 0x00;
         sprintf(buff,"%d",PID);
@@ -210,29 +158,81 @@ int main(int argc, char* argv[])
             arr[c] = malloc(256);
             memset(arr[c],0,256);
             strcat(arr[c],BHYVE_BIN);
-            fprintf(stderr,"[%d] %s\n",c,BHYVE_BIN);
+            fprintf(stdout,"[%d] %s\n",c,BHYVE_BIN);
             c++;
                         
             while((result = fgets(line,255,fp)) != NULL)
             {
-                line[strlen(line) - 1] = 0x00;
+                int st = strlen(line);
+                if(st <= 0)
+                {
+                    continue;
+                }
+
+                line[st - 1] = 0x00;
                 arr[c] = malloc(256);
                 memset(arr[c],0,256);
                 strcat(arr[c],line);
-                fprintf(stderr,"[%d] %s\n",c,line);
+                fprintf(stdout,"[%d] %s\n",c,line);
                 c++;
             }
             arr[c] = NULL;
-            fprintf(stderr,"\n\n");
+            fprintf(stdout,"\n\n");
+
+            int fd = open(log_file, O_CREAT | O_WRONLY | O_TRUNC, 0600);
+            if(fd)
+            {
+                //dup2(fd, STDOUT_FILENO); // Check `man stdin` for more info
+                dup2(fd, STDERR_FILENO);            
+            }
+
+            int fd2 = open("/dev/null", O_WRONLY, NULL);
+            if(fd2)
+            {
+                dup2(fd, STDOUT_FILENO);            
+            }
+            close(STDIN_FILENO);
 
             execvp(BHYVE_BIN, arr);
         }
     }
     else
     {
+        fprintf(stdout,"Root Path: %s\nBase Path: %s\nPrefix: %s\n",root_path,base_path,prefix);
+
+        pid_file[0] = 0x00;
+        sprintf(pid_file,"%s/ctl.pid",base_path);
+
+        PID = fork();
+        if (PID < 0)
+        {
+            fprintf(stderr,"Fork Failed!\n");
+            exit(2);
+        }
+
+        if (PID > 0)
+        {
+            buff[0] = 0x00;
+            sprintf(buff,"%d",PID);
+            writeFile(pid_file,buff);
+
+            fprintf(stdout,"Started in background\n");
+            exit(0);
+        }
+
+        umask(0);
+        SID = setsid();
+        if(SID < 0)
+        {
+            exit(1);
+        }
+
+        close(STDIN_FILENO);
+
         writeFile(res_file,"S");
         buff[0] = 0x00;
         sprintf(buff,"%s %s %s run",argv[0],argv[1],argv[2]);
+        fprintf(stdout,"Running: %s\n",argv[0]);
         rval = system(buff);
 
         buff[0] = 0x00;
@@ -241,6 +241,7 @@ int main(int argc, char* argv[])
         writeFile(res_file,buff);
         writeFile(pid_file,"");
     }
+
 
     return (0);
 }

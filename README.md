@@ -1,29 +1,28 @@
 # BVCP Application (Bhyve Virtual-Machine Control Panel)
 
-**Current Version: 2.1.x-Release**
+**Current Version: 2.2.x-Release**
 
 ## In Nutshell
-BVCP is a graphical and secure webcontrol panel for FreeBSD Bhyve's Virtual Machines.
-BVCP is made with love and for enterprise use, 24/7 NON-STOP operation, tested on production enterprise-class area.
-Unlike many others, BVCP is just a native application/software for FreeBSD with a one-click-install feature.
-BVCP is shall not interfere or modify your system settings it can be run at most of environments.
-BVCP can handle more physical hosts with one interface without clustering.
-Fun Fact: The software made within 4 months.
+BVCP is a graphical and secure web control panel designed for managing FreeBSD bhyve virtual machines.
+Engineered for datacenter-grade reliability, BVCP is built for continuous 24/7 operation with a focus on stability and performance.
+It is a native FreeBSD application featuring a simple one-click installation process, ensuring quick and effortless deployment.
+BVCP operates independently of system configurations and does not modify existing settings, allowing it to run smoothly in most environments.
+With BVCP, administrators can manage multiple physical hosts through a single unified interface—without the need for clustering.
 
 ## Introduction
-This is a personal project from the author of nPulse.net, Viktor Hlavaji (DaVieS).
-nPulse.net is always willing to share knowledge and resources with others, and I have 10+ experience of making industry-class / enterprise-class softwares.
+This project is a personal initiative by Viktor Hlavaji (DaVieS), the creator of nPulse.net. With over a decade of experience in developing industry-class and enterprise-grade software, we brings deep expertise and a passion for sharing knowledge and resources.
 
-It does have a Graphical user Interface via webinterface and also a CLI and an API.
-The software provides webGUI to let you manage Virtual Machines remotely.
+The software offers a graphical user interface accessible via a web interface, complemented by a command-line interface (CLI) and a fully featured API. This design enables flexible, remote management of virtual machines through an intuitive web GUI and via custom solutions.
 
-The software is uses our framework "Kinga Framework" which is used in various enterprise-class products already since 2017.
-Mostly written in C/C++.
-The software has its components:
-- Frontend (Web Interface)
-- Backend (Worker)
-- Helper 
-- Utils
+Built on the robust and proven Kinga Framework, which has powered various enterprise-class products since 2017, the software is primarily developed in C and C++ to ensure high performance and reliability.
+
+
+The architecture is modular and consists of the following key components:
+- Frontend (non privileged web interface) for user interaction
+- Backend (Worker) handling core operational tasks with elevated privileges
+- Helper is handling the virtual machine launch tasks
+- This structure supports scalability, maintainability, and efficient operation in production environments.
+
 
 Please refer to the website for more informations: [bhyve.npulse.net](https://bhyve.npulse.net)
 
@@ -33,7 +32,7 @@ Please refer to the website for more informations: [bhyve.npulse.net](https://bh
 <img src="screenshots/scr589.png" width="415" alt="Running Linux VM"> <img src="screenshots/scr587.png" width="415" alt="Dashboard">
 
 ## Bhyve
-Bhyve is a hypervisor of FreeBSD, this software requires that and FreeBSD 12+.
+The software requires an environment running FreeBSD 13.4-RELEASE or newer with the bhyve hypervisor enabled to function correctly. The underlying FreeBSD system and hardware must meet these specifications for full compatibility and optimal operation with this project.
 
 ## License: Community Free-Of-Charge Edition
 - You can download, install and use the BVCP Application for without any charges and limitations including commercial.
@@ -43,7 +42,7 @@ Bhyve is a hypervisor of FreeBSD, this software requires that and FreeBSD 12+.
 
 ## Installation
 ### Minimum Requirements
-- At least a FreeBSD 12+ installed onto your target machine with virtualisation capable amd64 architecture.
+- At least a FreeBSD 13.4-RELEASE or newer installed onto your target machine with virtualisation capable amd64 architecture.
 - Minimum 250MB of free space on /var/lib for the binaries
 - Network interface
 
@@ -120,18 +119,23 @@ Bhyve is a hypervisor of FreeBSD, this software requires that and FreeBSD 12+.
 
 Bhyve Virtual-Machine Control Panel under FreeBSD
 
-[N] 2021-06-28 03:04:17 | application/vmserver/main.c | Initialising bhyve VM Server Application
-Error: / ERR / invalid_parameter
+ Available Command Line Arguments:
+  - /var/lib/nPulse/vmm setup           Initial Setup
+  - /var/lib/nPulse/vmm resecure        Change API Keys
+  - /var/lib/nPulse/vmm reset_password  Change Admin Credential
+  - /var/lib/nPulse/vmm cli             CLI Interface
+
 Available Commands:
 + vm      | Virtual Machine Management
 + storage | Storage Management
 + switch  | Virtual Switch Management
 + user    | Built-in User Management
 + vminfo  | SysInfo
-+ config  | Internal Storage
++ version | Software Version
++ config  | Internal Storage and Global Commands
 
 more details:  vm
-cmd example:  vm list ALL
+cmd example:  vm list
 Note: type exit to Quit
 
 _>
@@ -141,99 +145,121 @@ _>
 ````
   _> vm
   * [vm] Available Commands:
-    [Start/Stop Commands]
-    + start [prefix]                                                          | Start virtual machine
-    + check [prefix]                                                          | Check virtual machine
-    + shutdown [prefix]                                                       | ACPI Shutdown
-    + user [user]                                                             | Add user to the VM
-    + log [prefix] [max_entries]                                              | Fetch VM Journal
-    + kill [prefix]                                                           | Kill virtual machine
-    + stop [prefix]                                                           | Stop virtual machine
-    + list {prefix}                                                           | List virtual machine
-    + destroy {prefix}                                                        | Destroy virtual machine
-    + restart [prefix]                                                        | Restart virtual machine
- 
-    [Management Commands]
-    + create [prefix] [description]                                           | New virtual machine
-    + desc [prefix] [new_description]                                         | Modify virtual machine
-    + note [prefix] {new_note}                                                | Add/Get note
-    + clear [prefix]                                                          | Clear config (debug purpose)
-    + set [prefix] [key] [value]                                              | Set core variables
-      - keys: cpu.socket, cpu.core, memory, sys[linux,win,bsd] arch[intel,amd]
-      - keys: auto.boot, vnc.wait
-    - destroy [prefix]                                                        | Destroy virtual machine
-    + list                                                                    | List virtual machine
- 
-    [Disk Management Commands]
-    + disk create [prefix] [storage] [name] [size]                            | Create new disk
-    + disk attach [prefix] [file] [desc] [slot] [ahci/virtio]                 | Attach Disk into VM
-    + disk detach [prefix] [file]                                             | Detach Disk from VM
-    + disk destroy [prefix] [ID/file]                                         | Delete Disk
-    + disk resize [prefix] [file] [new_size]                                  | Resize Disk
-    + disk list [prefix]                                                      | List Disks
- 
-    [CDROM Commands]
-    + cdrom attach [prefix] [iso_file]                                        | Attach ISO file as CD-ROM
-    + cdrom detach [prefix] [iso_file]                                        | Detach ISO
-    + cdrom list [prefix]                                                     | List ISO Images
- 
-    [Network Commands]
-    + nic add_virtio [prefix] [switch] {mac_addr}                             | Add VirtIO/NIC bound to switch
-    + nic add_legacy [prefix] [switch] {mac_addr}                             | Add Intel/NIC bound to switch
-    + nic change [prefix] [NIC] [switch]                                      | Change Switch
-    + nic enable [prefix] [NIC]                                               | Enable NIC
-    + nic disable [prefix] [NIC]                                              | Disable NIC
-    + nic remove [prefix] [NIC]                                               | Remove NIC
-    + nic list [prefix]                                                       | List Interfaces
+   [Start/Stop Commands]
+   + start [prefix]                                                          | Start virtual machine
+   + check [prefix]                                                          | Check virtual machine
+   + stat  [prefix] {format: safe,raw}                                       | Get CPU/MEM statistics
+   + shutdown [prefix]                                                       | ACPI Shutdown
+   + user [user]                                                             | Add user to the VM
+   + log [prefix] [max_entries]                                              | Fetch VM Journal
+   + pause [prefix]                                                          | Pause virtual machine
+   + resume [prefix]                                                         | Resume virtual machine
+   + kill [prefix]                                                           | Kill virtual machine
+   + stop [prefix]                                                           | Stop virtual machine
+   + list {prefix}                                                           | List virtual machine
+   + destroy {prefix}                                                        | Destroy virtual machine
+   + restart [prefix]                                                        | Restart virtual machine
+
+   [Management Commands]
+   + create [prefix] [description]                                           | New virtual machine
+   + desc [prefix] [new_description]                                         | Modify virtual machine
+   + note [prefix] {new_note}                                                | Add/Get note
+   + clear [prefix]                                                          | Clear config (debug purpose)
+   + set [prefix] [key] [value]                                              | Set core variables
+     - keys: cpu.socket, cpu.core, memory, sys[linux,win,bsd] arch[intel,amd]
+     - keys: vnc.wait, vnc.display, utc_time, wire_memory, passthru, hda
+     - keys: clear_bios [DEPRECATED]
+     - keys: reset_uefi=[yes], protect_uefi=[true/false]
+     - keys: auto_boot=[true/false], boot_priority=[low/med/high]
+     - keys: custom_prepend                                                  | Prepend custom parameters
+     - keys: custom_append                                                   | Append custom parameters
+   - destroy [prefix]                                                        | Destroy virtual machine
+
+   [Disk Management Commands]
+   + disk create [prefix] [storage] [name] [size]                            | Create new disk
+   + disk attach [prefix] [file] [desc] [slot] [legacy/ahci/virtio/nvme]     | Attach Disk into VM
+   + disk nvme_set [prefix] [name] [key] [value]                             | Set nvme values on disk
+     - keys: maxq (Max number of queues), qsz (Queue Size), isoslots (IO Slots), sectsz (Sector Size in Bytes)
+   + disk detach [prefix] [file]                                             | Detach Disk from VM
+   + disk destroy [prefix] [ID/file]                                         | Delete Disk
+   + disk resize [prefix] [file] [new_size]                                  | Resize Disk
+   + disk list [prefix]                                                      | List Disks
+
+   [Share Management Commands]
+   + share attach [prefix] [share_name] [host_dir] {readonly}                | Create Virtio-9P VirtFS
+   + share detach [prefix] [share_name]                                      | Remove Share
+   + share list [prefix]                                                     | List Shares
+
+   [CDROM Commands]
+   + cdrom attach [prefix] [iso_file]                                        | Attach ISO file as CD-ROM
+   + cdrom detach [prefix] [iso_file]                                        | Detach ISO
+   + cdrom list [prefix]                                                     | List ISO Images
+
+   [Network Commands]
+   + nic add_virtio [prefix] [switch] {mac_addr} {host_ip} {custom_route}    | Add VirtIO/NIC bound to switch
+   + nic add_legacy [prefix] [switch] {mac_addr} {host_ip} {custom_route}    | Add Intel/NIC bound to switch
+   + nic change [prefix] [NIC] [switch]                                      | Change Switch
+   + nic mac [prefix] [NIC] [mac_addr]                                       | Change MAC Address
+   + nic host_ip [prefix] [NIC] [ip]                                         | Add IP to host's TAP interface
+   + nic custom_route [prefix] [NIC] [ip]                                    | Add custom route rule to host's TAP interface
+   + nic enable [prefix] [NIC]                                               | Enable NIC
+   + nic disable [prefix] [NIC]                                              | Disable NIC
+   + nic remove [prefix] [NIC]                                               | Remove NIC
+   + nic list [prefix]                                                       | List Interfaces
 ````
 
 ### Storage Submenu
 ````
   _> storage
   * [storage] Available Commands:
-  [Basic Commands]
-  + list {active}                               | List Storages
-  + create [mountpoint] [description]           | Enable new storage
-  + modify [mountpoint] [desc] {enable/disable} | Modify existing storage
-  + destroy [mountpoint]                        | Destroy Storage
+   [Basic Commands]
+   + list {active}                               | List Storages
+   + info [mountpoint]                           | Get usage statistics
+   + create [mountpoint] [description]           | Enable new storage
+   + modify [mountpoint] [desc] {enable/disable} | Modify existing storage
+   + empty_trash [mountpoint]                    | Empty deleted disk images
+   + destroy [mountpoint]                        | Destroy Storage
 ````
 
 ### Switch Submenu
 ````
   _> switch
   * [switch] Available Commands:
-  [Basic Commands]
-  + create [prefix] [description]                                                       | Create new vSwitch
-  + destroy [prefix]                                                                    | Destroy vSwitch
-  + desc [prefix] [description]                                                         | Rename vSwitch
-  + reload                                                                              | Reload Configuration
-  + cleanup                                                                             | Clear OS configuration
-  + bound [prefix] [iface]                                                              | Bound to network interface
-  + unbound [prefix]                                                                    | UnBound from network interface
-  + list                                                                                | List vSwitch
-  + listDevs                                                                            | List Network Cards
+   [Basic Commands]
+   + create [prefix] [description]                                                       | Create new vSwitch
+   + destroy [prefix]                                                                    | Destroy vSwitch
+   + desc [prefix] [description]                                                         | Rename vSwitch
+   + reload                                                                              | Reload Configuration
+   + cleanup                                                                             | Clear OS configuration
+   + bound [prefix] [iface]                                                              | Bound to network interface
+   + unbound [prefix]                                                                    | UnBound from network interface
+   + list                                                                                | List vSwitch
+   + listDevs                                                                            | List Network Cards
 ````
 
 ### Switch Submenu
 ````
   _> user
-  * [user] Available Commands:
-  + ipinfo [ip_addr]                                                  | Show IP Geo Info
-  + fetch [userID/mail/ALL]                                           | Get list of user(s)
-  + logauth [mail] [TYPE] [IP] [CUID] [EXT]                           | Log Authentication
-  + authlog [mail/ALL]                                                | Retrieve Authentication Logs
-  + change [mail/ID] [new_name] [new_mail] [new_password (optional)]  | Modify User Settings
-  + role [mail/ID] [USER/ADMIN]                                       | Modify User Role
-  + create [name] [mail] [passwd]                                     | Create new user account
-  + delete [mail/userID]                                              | Dele
+   * [user] Available Commands:
+   + ipinfo [ip_addr] {async}                                          | Show IP Geo Info
+   + fetch [userID/mail/ALL]                                           | Get list of user(s)
+   + logauth [mail] [TYPE] [IP] [CUID] [EXT]                           | Log Authentication
+   + authlog [mail/ALL]                                                | Retrieve Authentication Logs
+   + change [mail/ID] [new_name] [new_mail] [new_password (optional)]  | Modify User Settings
+   + role [mail/ID] [USER/ADMIN]                                       | Modify User Role
+   + create [name] [mail] [passwd]                                     | Create new user account
+   + delete [mail/userID]                                              | Delete user account
 ````
 
 ### Config Submenu
 ````
  _> config
-    * [config] Available Commands:
-    [Basic Commands]
-    + set [key] [value]   | Set config variable
-    + get [key]           | Get config variable
-    + del [key]           | Delete config variable
+   * [config] Available Commands:
+   [Basic Commands]
+   + set [key] [value]   | Set config variable
+   + get [key]           | Get config variable
+   + del [key]           | Delete config variable
+
+   [Global Commands]
+   + abort_autoboot      | Abort autoboot process
 ````

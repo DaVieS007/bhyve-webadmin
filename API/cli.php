@@ -1,7 +1,7 @@
 #!/usr/local/bin/php
 
 <?php
-$API_KEY = "208C694F9CBD2B0B47F8E4EC7C0D2A5FB3B29984802E3E049A73A2011CB93BDC"; // CHANGE THIS !!
+$API_KEY = ""; // <--- CHANGE THIS!!
 $API_HOST = "localhost";
 $API_PORT = "8628";
 
@@ -176,8 +176,10 @@ error_reporting(E_ALL^E_NOTICE);
         /** ENABLEAES **/
 
         /** QUERY **/
-        function query($code,$arr,$data = NULL)
+        function query($code,$arr,$data = "")
         {
+            $data_len = strlen($data);
+
             $this->data = array();
             if(!is_resource($this->sock))
             {
@@ -218,7 +220,7 @@ error_reporting(E_ALL^E_NOTICE);
             }
 
 
-            $header = "D".$code.".".$this->protocol_version.".".strlen($arr).".".strlen($data).".";
+            $header = "D".$code.".".$this->protocol_version.".".strlen($arr).".".$data_len.".";
             if($this->key)
             {
                 $header .= "1";
@@ -236,7 +238,7 @@ error_reporting(E_ALL^E_NOTICE);
             }
 
             $this->fwrite_stream($this->sock,$arr);
-            if($data)
+            if($data_len > 0)
             {
                 $this->fwrite_stream($this->sock,$data);
             }

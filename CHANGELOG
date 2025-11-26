@@ -1,6 +1,46 @@
-WARNING, BEFORE YOU UPDATE FROM V1 TO V2:
-From version 2.x PCI Device IDs are statically assigned, that can cause Guest Virtual Machines might be needs to be adjusted.
-From version 2.x maximum allowed ISO mounts is limited to 6, maximum Virtual Disks are 12 and 8 extra PCI slot including (NIC, Passthru) devices.
+From version 2.2.x Destroyed disk images are held in trash for 72 hours before deletion.
+From version 2.2.x Minimum system requirement is FreeBSD 13.4-RELEASE (!)
+
+Feature that we are working on:
+ - VM Cloning
+ - Guest Additions
+ - Templates
+ - Two Factor Authentication
+ - SIEM
+
+v.2.2.0-release (FreeBSD 13.4-RELEASE and above)
+2025.11.20: Starting new release branch
+2025.11.10: Added UEFI Read-Only Lock
+2025.11.08: Custom routing for vitual interfaces
+2025.11.06: Resize disks are now requires administrator password
+2025.11.06: Destroyed disk images are held in trash for 72 hours before deletion.
+2025.11.06: Fix: deleted ISO images can be unmount
+2025.11.05: vmctl.c code cleanup and proper handling std/IO
+2025.10.31: Better transmission protocol allows raw VNC compression, making it significantly faster [#MOST_WANTED_FEATURE]
+2025.10.30: Fix: OOB write at websocket functions [#security]
+2025.10.30: Added (delayed) auto-start option [GHUB-60]
+2025.10.30: Better error and debug display on frontend
+2025.10.29: Fix: unreleased memory at poweroff [GHUB-72]
+2025.10.29: Proper handle of disabled NICs
+2025.10.28: Added new Dark theme
+2025.08.27: Updated framework, libraries, optimisations
+2025.08.20: CLI.PHP Fixes [GHUB-69]
+2025.06.27: Fix: displaying wrong swap usage on statistics panel
+2025.03.20: PCI_PASSTHRU does work at any case [GHUB-65]
+2025.06.07: Revamped UI
+2025.08.12: Better handling syscalls and deadlock protection
+2025.06.06: Protect sensitive information when present on notes [#security]
+2025.03.20: Added support for virtio-9p
+2025.02.27: Added custom configuration parameters
+2025.01.15: Updated SSL and Vendor database
+2024.12.20: Updated EDK2 Bhyve Bootrom
+2024.10.01: Fix: `the index 'meta' does not exist`
+2024.10.01: Fix: `the index 'HOSTNAME' does not exist` error
+2024.10.04: Added detailed Storage and Network interface usage informations
+2024.10.03: Added virtual machine statistics and charts
+2024.08.16: Added Resume/Suspend ability
+2024.07.05: HTTP Protocol: file upload fix (does not affect the product)
+2024.06.18: Hide unrelated node informations from dashboard [#security]
 
 v.2.1.4-release
 2024.04.02: Added better implementation of truncate() and warning
@@ -54,6 +94,11 @@ v.2.0.8-release
 2024.02.02: Fix `the index 'name' does not exist at application/vmclient/web/webadmin/vm/list.c(109)` error
 2024.02.02: Max allowed CPU Count adjusted to sysctl variables
 2024.02.02: Better way to check of requirements of bhyve core, IOMMU, max cpu count
+
+
+WARNING, BEFORE YOU UPDATE FROM V1 TO V2:
+From version 2.x PCI Device IDs are statically assigned, that can cause Guest Virtual Machines might be needs to be adjusted.
+From version 2.x maximum allowed ISO mounts is limited to 6, maximum Virtual Disks are 12 and 8 extra PCI slot including (NIC, Passthru) devices.
 
 v.1.9.8-p9-release
 2024.01.02: Implement protocol version-3 but uses 2 by default for compatibility
