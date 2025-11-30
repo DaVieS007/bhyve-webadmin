@@ -8,6 +8,10 @@ Feature that we are working on:
  - Two Factor Authentication
  - SIEM
 
+v.2.2.0p1-release
+2025.11.30: HOTFIX: Fixed error when vSwitch deleted
+2025.11.30: HOTFIX: Fixed frontend error when fetching data too early on newly created VMs
+
 v.2.2.0-release (FreeBSD 13.4-RELEASE and above)
 2025.11.20: Starting new release branch
 2025.11.10: Added UEFI Read-Only Lock
