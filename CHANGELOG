@@ -8,6 +8,10 @@ Feature that we are working on:
  - Two Factor Authentication
  - SIEM
 
+v.2.2.2p2-release
+2026.06.23: Fixes Setup issues showing initial password and account
+2026.06.23: Fixes missing command line interface handling
+
 v.2.2.2p1-release
 2026.06.16: Framework update for more stable behavior
 2026.06.16: Fixed view and padding issues on mobile
