@@ -3,10 +3,26 @@ From version 2.2.x Minimum system requirement is FreeBSD 13.4-RELEASE (!)
 
 Feature that we are working on:
  - VM Cloning
+ - Snapshots
+ - Live disk cloning
  - Guest Additions
  - Templates
  - Two Factor Authentication
  - SIEM
+ - Import & Export VMs
+
+v.2.2.4-release
+2026.11.11: Reworked code for speed optimisations
+2026.11.10: Fixed VNC timeouts
+2026.11.09: Code clenup
+2026.11.08: Fix that autoboot handling virtual nics differently cause network loss
+2026.11.07: Added more security fences to a HTTP/S server
+2026.11.06: Better memory handling and optimisations in the framework
+2026.11.05: More modern network stack, optimised DNS resolver, packets handling
+
+v.2.2.2p3-release
+2026.08.09: Possible fix for a race-condition at autoboot sequence
+2026.08.02: Fix that IOMMU shown as unsupported on modern AMD systems
 
 v.2.2.2p2-release
 2026.06.23: Fixes Setup issues showing initial password and account
