@@ -11,6 +11,11 @@ Feature that we are working on:
  - SIEM
  - Import & Export VMs
 
+v.2.2.4p1-release (!!!!)
+2026.11.13: Important Fix: Inline caching function may use invalidated data causing random behavior [#security] [#critical]
+2026.11.12: Fix malformed URL cause server soft error [#security] [#DenialOfService]
+
+
 v.2.2.4-release
 2026.11.11: Reworked code for speed optimisations
 2026.11.10: Fixed VNC timeouts
